@@ -5,7 +5,6 @@ php:
 
 before_script:
   - cp .env.travis .env
-  - php artisan key:generate
   - composer self-update
   - composer install --no-interaction
 
@@ -15,4 +14,5 @@ cache:
     - vendor
 
 script:
+  - php artisan key:generate
   - vendor/bin/phpunit
