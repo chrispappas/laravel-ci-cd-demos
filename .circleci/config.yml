@@ -28,6 +28,7 @@ jobs:
           paths:
             - node_modules
       - run: touch database/database-testing.sqlite
+      - run: php artisan key:generate
       - run: php artisan migrate --env=testing --database=sqlite_testing --force
 
       # run tests!
