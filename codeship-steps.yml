@@ -1,12 +1,12 @@
 - name: dependencies
   service: web_codeship_example_php
   command: composer install
-- type: serial
-  steps:
-    - service: web_codeship_example_php
-      command: cp .env.travis .env
-    - service: web_codeship_example_php
-      command: php artisan key:generate
+- name: env
+  service: web_codeship_example_php
+  command: cp .env.travis .env
+- name: key
+  service: web_codeship_example_php
+  command: php artisan key:generate
 - name: tests
   service: web_codeship_example_php
   command: vendor/bin/phpunit
