@@ -1,3 +1,5 @@
 web_codeship_example_php:
-  build: .
+  build:
+    image: chrispappas/laravel-ci-cd-demos
+    dockerfile: Dockerfile-codeship
   cached: true

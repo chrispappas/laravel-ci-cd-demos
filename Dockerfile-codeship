@@ -17,3 +17,6 @@ RUN docker-php-ext-install mcrypt pdo_mysql zip
 # Install Composer
 RUN curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+WORKDIR /var/www/html
+
+COPY . /var/www/html
