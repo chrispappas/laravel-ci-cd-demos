@@ -1,0 +1,3 @@
+web_codeship_example_php:
+  build: .
+  cached: true
