@@ -1,10 +1,10 @@
 - name: dependencies
   service: web_codeship_example_php
   command: composer install
-- name: env
+- name: copy_env
   service: web_codeship_example_php
   command: cp .env.travis .env
-- name: key
+- name: generate_key
   service: web_codeship_example_php
   command: php artisan key:generate
 - name: tests
