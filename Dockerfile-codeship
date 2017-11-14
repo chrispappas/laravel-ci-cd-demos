@@ -19,4 +19,10 @@ RUN curl --silent --show-error https://getcomposer.org/installer | php -- --inst
 
 WORKDIR /var/www/html
 
-COPY . /var/www/html
+COPY . .
+
+COPY .env.travis .env
+
+RUN composer install --prefer-dist --no-interaction
+
+RUN php artisan key:generate
